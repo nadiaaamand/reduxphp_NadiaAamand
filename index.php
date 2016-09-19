@@ -20,15 +20,15 @@ $connection->set_charset("utf8");  ?>
 		 ?>
          </header>
          <?php 
-		 $data = $connection->query("SELECT * FROM jokes"); 
+		 $data = $connection->query("SELECT * FROM jokes");
 		 while($result = $data->fetch_assoc()){
 			 echo '<div class="joke">';
 			 //inserting image
 			 if($result['img']){
-			echo '<img class="img" src="' . $result['img'] . '" alt="' . $result['title'] . '" width="200px">';
+			echo '<img class="img" src="' . $result['img'] . '" alt="' . '" width="200px">';
 			} else {
 			echo 'no image'; 
-			}
+			};
 	 echo '<h2>' . $result['joke'] . '</h2>';
 		echo'</div>';
 		 }
