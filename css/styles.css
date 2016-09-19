@@ -20,6 +20,7 @@ header {
 	border: solid 5px #c9c9c9;
 	transition: border 0.3s;
 	margin-top: 10px;
+	height:300px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
@@ -32,4 +33,7 @@ header {
 	float: left;
 	margin-right: 20px;
 }
+.img {
+	padding: 15px;
+	}
 
