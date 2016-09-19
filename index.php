@@ -6,7 +6,7 @@ $connection->set_charset("utf8");  ?>
 <head> 
 <meta charset="utf-8"> 
 <title>Chuck Norris Facts</title> 
-<link rel="stylesheet" type="text/css" href="file:///Macintosh HD/Users/nadiaaamand/Documents/CPHBusiness/3rd semester/Interaction/reduxphp/css/styles.css">	
+<link rel="stylesheet" type="text/css" href="css/styles.css">	
 </head>  
 <body>     	
 <header> <h1>Chuck Norris Facts</h1><?php 
@@ -20,18 +20,32 @@ $connection->set_charset("utf8");  ?>
 		 ?>
          </header>
          <?php 
-		 $jokedata = $connection->query("SELECT * FROM joke ORDER BY id DESC"); 
-		 $joke = $data->fetch_assoc();
-		 ###############################################################################################
-		 # Oh my god - I need a way to render ALL records from the database, not only the last one :-( #
-		 # This makes me sick...                                                                       # 
-		 ###############################################################################################
-		 print_r($joke);
-			echo '<!-- single Chuck Norris joke start -->
-			<div class="joke">
-					<img src="' . $joke['img'] . '" class="norris_pic" alt="Chuck Norris caricature"/>
-					<h2>' . $joke['joke'] .  '</h2>	       
-            </div>';
-			echo '<!-- single joke end -->';
-		 ?>  
+		 $data = $connection->query("SELECT * FROM post"); 
+		 while($result = $data->fetch_assoc()){
+			 echo '<article>';
+			 //inserting image
+			 if($result['img']){
+			echo '<img class="img" src="' . $result['img'] . '" alt="' . $result['title'] . '" width="200px">';
+			} else {
+			echo 'no image'; 
+			}
+	 echo '<p>' . $result['joke']
+		echo'</article>'
+	?> 
 </body> </html>
+
+//While = as long as there are records in the database
+while($result = $data_1->fetch_assoc()){
+	echo '<article>';
+		echo '<h2>' . $result['title'[ . '</h2>';
+		// inserting an image if present!
+		echo '<p>';
+			if($result['img']){
+		echo '<img class="img" src="' . $result['img'] . '" alt="' . $result['title'] . '" width="680px">';
+			} else {
+			echo 'no image'; 
+			}
+		echo '<p>' . $result['article'] . '</p>';
+		echo '<p>' . $result['author'] . '</p>';
+		
+		echo '</article>';
