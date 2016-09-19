@@ -20,32 +20,18 @@ $connection->set_charset("utf8");  ?>
 		 ?>
          </header>
          <?php 
-		 $data = $connection->query("SELECT * FROM post"); 
+		 $data = $connection->query("SELECT * FROM jokes"); 
 		 while($result = $data->fetch_assoc()){
-			 echo '<article>';
+			 echo '<div class="joke">';
 			 //inserting image
 			 if($result['img']){
 			echo '<img class="img" src="' . $result['img'] . '" alt="' . $result['title'] . '" width="200px">';
 			} else {
 			echo 'no image'; 
 			}
-	 echo '<p>' . $result['joke']
-		echo'</article>'
+	 echo '<h2>' . $result['joke'] . '</h2>';
+		echo'</div>';
+		 }
 	?> 
-</body> </html>
-
-//While = as long as there are records in the database
-while($result = $data_1->fetch_assoc()){
-	echo '<article>';
-		echo '<h2>' . $result['title'[ . '</h2>';
-		// inserting an image if present!
-		echo '<p>';
-			if($result['img']){
-		echo '<img class="img" src="' . $result['img'] . '" alt="' . $result['title'] . '" width="680px">';
-			} else {
-			echo 'no image'; 
-			}
-		echo '<p>' . $result['article'] . '</p>';
-		echo '<p>' . $result['author'] . '</p>';
-		
-		echo '</article>';
+</body> 
+</html>
