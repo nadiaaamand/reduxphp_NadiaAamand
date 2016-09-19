@@ -1,5 +1,5 @@
 <?php require_once("db_const.php");  
-$connection = new MySQLi(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLNAME); 
+$connection = new MySQLi(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB); 
 $connection->set_charset("utf8");  ?> 
 <!doctype html> 
 <html> 
