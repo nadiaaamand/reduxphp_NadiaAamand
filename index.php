@@ -8,7 +8,7 @@ $connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME); $connection->set_c
 <link rel="stylesheet" type="text/css" href="file:///Macintosh HD/Users/nadiaaamand/Documents/CPHBusiness/3rd semester/Interaction/reduxphp/css/styles.css">	
 </head>  
 <body>     	
-<header> <h1>Chuck Norris Facts</h1><?php 
+<header> <h1>Chuck Norris Facts happened</h1><?php 
 		 
 		 if ($connection->connect_error) {
 			die('Connect Error: ' . $connection->connect_error);
